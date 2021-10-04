@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       
+    </style>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+</head>
+
+<body CLASS="bg_three">
+    <nav>
+        <a class="button" href="/appointment">GO BACK</a>
+    </nav>
+    <div class="e" align="center">
+        <form action="/update/{{appointment.tell_no}}" method="POST">
+            {% csrf_token %}
+
+            <table>
+                <tr>
+                    <td><label>FIRST NAME:</label></td>
+                    <td><input name="first_name" required value="{{appointment.first_name}}"></td>
+                </tr>
+
+                <tr>
+                    <td><label>LAST NAME:</label></td>
+                    <td><input name="last_name" required value="{{appointment.last_name}}"></td>
+                </tr>
+
+                <tr>
+                    <td><label>PHONE NUMBER</label></td>
+                    <td><input name="tell_no" required value="{{appointment.tell_no}}"></td>
+                </tr>
+
+                <tr>
+                    <td><label>EMAIL ADDRESS</label></td>
+                    <td><input name="email_id" required value="{{appointment.email_id}}"></td>
+                </tr>
+
+                <tr>
+                    <td><label>ADDRESS</label></td>
+                    <td><input name="address" required value="{{appointment.address}}"></td>
+                </tr>
+
+                <tr>
+                    <td><label>POSTAL CODE</label></td>
+                    <td><input name="postal_code" required value="{{appointment.postal_code}}"></td>
+                </tr>
+
+                <tr>
+                    <td><label>DATE</label></td>
+                    <td><input name="date" required value="{{appointment.date}}"></td>
+                </tr>
+
+                <tr>
+                    <td><button type="submit" class="button" onclick="alert('UPDATED SUCCESSFULLY')">Update</button>
+                    </td>
+                </tr>
+
+
+
+
+
+            </table>
+
+
+
+        </form>
+
+    </div>
+</body>
+
+</html>

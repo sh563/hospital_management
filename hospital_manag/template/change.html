@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>delete</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+</head>
+
+<body class="bg_three">
+    <nav>
+        <a class="c" href="/appointment">GO BACK</a>
+    </nav>
+    <div class="e" align="center">
+        <table cellspacing="10s">
+
+            <tr>
+                <th>FIRST NAME</th>
+                <th>LAST Name</th>
+                <th>PHONE NUMBER</th>
+                <th>EMAIL ADDRESS</th>
+                <th>HOUSE ADDRESS</th>
+                <th>POSTAL CODE</th>
+                <th>DATE</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            {% for ap in appointment %}
+
+            <tr>
+                <td>
+                    <div>{{ap.first_name}}</div>
+                </td>
+                <td>
+                    <div>{{ap.last_name}}</div>
+                </td>
+                <td>
+                    <div>{{ap.tell_no}}</div>
+                </td>
+                <td>
+                    <div>{{ap.email_id}}</div>
+                </td>
+                <td>
+                    <div>{{ap.address}}</div>
+                </td>
+                <td>
+                    <div>{{ap.postal_code}}</div>
+                </td>
+                <td>
+                    <div>{{ap.date}}</div>
+                </td>
+
+                <td><a class="button" href="/deleted/{{ap.tell_no}}" onclick="alert('DELETED SUCCESSFULLY')">DELETE</a>
+                </td>
+                <td><a class="button" href="/edit/{{ap.tell_no}}">UPDATE</a></td>
+            </tr>
+
+
+
+            {% endfor %}
+
+        </table>
+    </div>
+</body>
+
+</html>
