@@ -8,12 +8,14 @@
         table {
             border-collapse: collapse;
             width: 100%;
+            margin: 50px  4px 20px 4px ;
+            
         }
 
         th,
         td {
             text-align: left;
-            padding: 8px;
+            padding: 4px;
         }
 
         tr:nth-child(even) {
@@ -21,32 +23,40 @@
         }
 
         th {
-            background-color: #4CAF50;
+            background-color:rgb(51, 51, 134);
+            padding: 2px;
             color: white;
+        }
+
+        .button_change{
+            background-color:darkblue;
+            padding:2px;
+            text-decoration: none;
+            color:white
         }
     </style>
     {% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
 
-<body class="bg_three">
+<body class="bg_one">
     <nav>
         <a class="c" href="/appointment">GO BACK</a>
     </nav>
-    <div class="e" align="center">
-        <table cellspacing="10s">
+    <div class="" align="center">
+        <table >
 
             <tr>
                 <th>FIRST NAME</th>
-                <th>LAST Name</th>
+                <th>LAST NAME</th>
                 <th>PHONE NUMBER</th>
                 <th>EMAIL ADDRESS</th>
                 <th>HOUSE ADDRESS</th>
                 <th>POSTAL CODE</th>
                 <th>DATE</th>
-                <th>Delete</th>
-                <th>Update</th>
+                <th>DELETE</th>
+                <th>UPDATE</th>
             </tr>
             {% for ap in appointment %}
 
@@ -73,9 +83,9 @@
                     <div>{{ap.date}}</div>
                 </td>
 
-                <td><a class="button" href="/deleted/{{ap.tell_no}}" onclick="alert('DELETED SUCCESSFULLY')">DELETE</a>
+                <td><a class="button_change" href="/deleted/{{ap.tell_no}}" onclick="alert('DELETED SUCCESSFULLY')">DELETE</a>
                 </td>
-                <td><a class="button" href="/edit/{{ap.tell_no}}">UPDATE</a></td>
+                <td><a class="button_change" href="/edit/{{ap.tell_no}}">UPDATE</a></td>
             </tr>
 
 
